@@ -32,39 +32,9 @@
   }
 }
 
-button {
-  width: 90px;
-  height: 90px;
-  font-size: 18px;
-  font-weight: bold; 
-   
-}
+/* keypad button sytles */
 
-button:hover {  
-  font-size: 18px;
-  font-weight: bold;  
-  border: 1px solid rgb(48, 118, 211);
-  cursor: pointer;
-  background: #236088;
-  color:white;
-}
-
-.txtresult{
-  width:358px;
-  height: 45px;
-  font-size: 25px;
-  background-color: #F3F0EF ;
-  border: 0px solid gray;
-  font-weight: bold;
-  text-align: right; 
-}
-
-.box {
-  background-color: #236088;
-  color: #fff;  
-  font-size: 150%;  
-}
-
+/* keypad button sytles */
 .container {
   width: 100%;
   display: grid;
@@ -91,6 +61,11 @@ button:hover {
   border: 0px solid gray;
 }
 
+.box {
+  background-color: #236088;
+  color: #fff;  
+  font-size: 150%;  
+}
 
 .item1 {
   grid-column: 1 / 5;
@@ -113,4 +88,29 @@ button:hover {
   font-weight: bold;
   font-size:30px;
   padding-right: 10px;
+}
+button {
+  width: 90px;
+  height: 90px;
+  font-size: 18px;
+  font-weight: bold;    
+}
+
+button:hover {  
+  font-size: 18px;
+  font-weight: bold;  
+  border: 1px solid rgb(48, 118, 211);
+  cursor: pointer;
+  background: #236088;
+  color:white;
+}
+
+.txtresult{
+  width:358px;
+  height: 45px;
+  font-size: 25px;
+  background-color: #F3F0EF ;
+  border: 0px solid gray;
+  font-weight: bold;
+  text-align: right; 
 }

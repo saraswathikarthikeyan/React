@@ -1,4 +1,7 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Calculator
+This application was created using react js. Calculator will perform basic arithmetic operaions
+Additon, Subtraction, Multiplication and Division.
+
 
 ## Available Scripts
 

@@ -47,8 +47,9 @@ class App extends Component {
         this.setState({  expression: '', answer:'' });
         break;
       case 'ce':
-        //delete the last entered digit acts like backspace
-        this.setState({  expression:this.state.expression.slice(0, -1) });
+          let slicedVal = String(this.state.expression).slice(0, -1);
+          //delete the last entered digit acts like backspace
+          this.setState({  expression: slicedVal });       
         break;
       default:
         if(this.state.lastClicked === "equal")  { 

@@ -21,7 +21,7 @@ describe("When testing with Enzyme", () => {
   const spy = Sinon.spy(Calculator.prototype, 'doCalculations');
   beforeAll(()=>{
     wrapper = shallow(<Calculator />);    
-  });
+  });  
   
   it("checks header", () => {     
       expect(wrapper.find("header").length).toBe(1);      
@@ -82,8 +82,7 @@ describe("When testing with Enzyme", () => {
   expect(wrapper.find("input").props().value).toEqual('');
 });
 
-  /* Test for Subtraction Starts */
- 
+  /* Test for Subtraction Starts */ 
   it("input text box value on button click 8", () => {    
     wrapper.find('button').at(13).simulate('click', {target: { name: "8" } } ); 
     expect(wrapper.find("input").props().value).toEqual('8');
