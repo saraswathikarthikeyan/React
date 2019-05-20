@@ -61,7 +61,7 @@
   border: 0px solid gray;
 }
 
-.box {
+#box {
   background-color: #236088;
   color: #fff;  
   font-size: 150%;  
@@ -89,14 +89,14 @@
   font-size:30px;
   padding-right: 10px;
 }
-button {
+#box button {
   width: 90px;
   height: 90px;
   font-size: 18px;
   font-weight: bold;    
 }
 
-button:hover {  
+#box button:hover {  
   font-size: 18px;
   font-weight: bold;  
   border: 1px solid rgb(48, 118, 211);

@@ -1,0 +1,77 @@
+:root {
+    --main-bg-color: blueviolet;
+}
+
+.Quotewrapper {
+    background-color:var(--main-bg-color);    
+    height:100%;
+    width:100%;    
+    position:fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.innerdiv {
+    border:1px solid white;
+    background-color: white;
+    width:600px;
+    height:300px;
+    border-radius: 15px;
+    display: flex;   
+     flex-direction: column;    
+}
+.quote {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+    color: var(--main-bg-color);
+    font-weight: bold;
+    font-size: 20px;
+}
+.btndivs {
+    display: flex;
+    flex-direction: row;
+    
+}
+.left {   
+    display: flex;
+    flex-direction: row;    
+   
+}
+.right {
+    margin-left: auto;    
+    margin-right: 5%;
+}
+
+
+
+.socialbuttons {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
+  
+  .socialbuttons {
+    background-color: white; 
+    color: black; 
+    border: 2px solid var(--main-bg-color);
+  }
+  
+  .socialbuttons:hover {
+    background-color: var(--main-bg-color);
+    color: white;
+  }
+  .socialbuttons:after {
+    background-color: var(--main-bg-color);
+    color: white;
+  }

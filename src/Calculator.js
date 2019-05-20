@@ -14,7 +14,7 @@ class App extends Component {
     //method called when any button clicked on calculator
     this.doCalculations = this.doCalculations.bind(this);
 
-    //method called when any button is pressed inside textbox
+    //method called when any key is pressed inside textbox
     this.isNumber = this.isNumber.bind(this);    
   }
 
@@ -31,14 +31,14 @@ class App extends Component {
          //calcultes the expression when equals button is clicked. 
           let calcAnswer = eval(this.state.expression);         
           let precision = getPrecision(calcAnswer);
-         
+          //console.log(this.state.expression);
           if ( +precision >= 7 ) {
             // truncates the digits after decimal point to 6 digits.
             calcAnswer = +calcAnswer.toFixed(6);
           } 
           this.setState({ lastClicked: 'equal', answer: calcAnswer, expression: calcAnswer });    
         }
-        catch(err) {     
+        catch(err) {      //console.log(this.state.expression);
           this.setState({  answer: 'err', expression:'err' });  
         }
         break;
@@ -52,14 +52,18 @@ class App extends Component {
           this.setState({  expression: slicedVal });       
         break;
       default:
-        if(this.state.lastClicked === "equal")  { 
+        if(this.state.lastClicked === "equal")  {  
           //checks the last operation and clears the result in textbox for new expression.
           this.setState({ lastClicked: '', expression: btnClicked });   
         }
-        else { 
+        else {           
           //concatinates the entered value to form expression.
           let question = this.state.expression + btnClicked; 
-          this.setState({ lastClicked: '', expression: question });   
+          if(question.length === 2 && question.indexOf(0) === 0){          
+            question = btnClicked;
+          }
+          this.setState({ lastClicked: '', expression: question });  
+          
         } 
     } 
   }
@@ -106,26 +110,26 @@ class App extends Component {
           </div>
           </div>
           <div className="keypad">
-          <div className="box"> <button name="(" onClick= { e => this.doCalculations(e.target.name )  } >(</button></div>
-          <div className="box"> <button name="c" onClick= { e => this.doCalculations(e.target.name ) } >C</button></div>
-          <div className="box"> <button name=")" onClick= { e => this.doCalculations(e.target.name )  } >)</button></div>
-          <div className="box"> <button name="ce" onClick= { e => this.doCalculations(e.target.name )  } >CE</button></div>
-          <div className="box"> <button name="1" onClick= { e => this.doCalculations(e.target.name )  } >1</button></div>
-          <div className="box"> <button name="2" onClick= { e => this.doCalculations(e.target.name )  } >2</button></div>
-          <div className="box"> <button name="3" onClick= { e => this.doCalculations(e.target.name )  } >3</button></div>
-          <div className="box"> <button name="+" onClick= { e => this.doCalculations(e.target.name , this.state)  } >+</button></div>
-          <div className="box"> <button name="4" onClick= { e => this.doCalculations(e.target.name , this.state)  } >4</button></div>
-          <div className="box"> <button name="5" onClick= { e => this.doCalculations(e.target.name , this.state)  } >5</button></div>
-          <div className="box"> <button name="6" onClick= { e => this.doCalculations(e.target.name , this.state)  } >6</button></div>
-          <div className="box"> <button name="-" onClick= { e => this.doCalculations(e.target.name , this.state)  } >-</button></div>
-          <div className="box"> <button name="7" onClick= { e => this.doCalculations(e.target.name , this.state)  } >7</button></div>
-          <div className="box"> <button name="8" onClick= { e => this.doCalculations(e.target.name , this.state)  } >8</button></div>
-          <div className="box"> <button name="9" onClick= { e => this.doCalculations(e.target.name , this.state)  } >9</button></div>
-          <div className="box"> <button name="*" onClick= { e => this.doCalculations(e.target.name , this.state)  } >*</button></div>
-          <div className="box"> <button name="." onClick= { e => this.doCalculations(e.target.name , this.state)  } >.</button></div>
-          <div className="box"> <button name="0" onClick= { e => this.doCalculations(e.target.name , this.state)  } >0</button></div>
-          <div className="box"> <button name="=" onClick= { e => this.doCalculations(e.target.name , this.state)  } >=</button></div>
-          <div className="box"> <button name="/" onClick= { e => this.doCalculations(e.target.name , this.state)  } >/</button></div>
+          <div id ="box"> <button name="(" onClick= { e => this.doCalculations(e.target.name )  } >(</button></div>
+          <div id ="box"> <button name="c" onClick= { e => this.doCalculations(e.target.name ) } >C</button></div>
+          <div id ="box"> <button name=")" onClick= { e => this.doCalculations(e.target.name )  } >)</button></div>
+          <div id ="box"> <button name="ce" onClick= { e => this.doCalculations(e.target.name )  } >CE</button></div>
+          <div id ="box"> <button name="1" onClick= { e => this.doCalculations(e.target.name )  } >1</button></div>
+          <div id ="box"> <button name="2" onClick= { e => this.doCalculations(e.target.name )  } >2</button></div>
+          <div id ="box"> <button name="3" onClick= { e => this.doCalculations(e.target.name )  } >3</button></div>
+          <div id ="box"> <button name="+" onClick= { e => this.doCalculations(e.target.name )  } >+</button></div>
+          <div id ="box"> <button name="4" onClick= { e => this.doCalculations(e.target.name )  } >4</button></div>
+          <div id ="box"> <button name="5" onClick= { e => this.doCalculations(e.target.name )  } >5</button></div>
+          <div id ="box"> <button name="6" onClick= { e => this.doCalculations(e.target.name )  } >6</button></div>
+          <div id ="box"> <button name="-" onClick= { e => this.doCalculations(e.target.name )  } >-</button></div>
+          <div id ="box"> <button name="7" onClick= { e => this.doCalculations(e.target.name )  } >7</button></div>
+          <div id ="box"> <button name="8" onClick= { e => this.doCalculations(e.target.name )  } >8</button></div>
+          <div id ="box"> <button name="9" onClick= { e => this.doCalculations(e.target.name )  } >9</button></div>
+          <div id ="box"> <button name="*" onClick= { e => this.doCalculations(e.target.name )  } >*</button></div>
+          <div id ="box"> <button name="." onClick= { e => this.doCalculations(e.target.name )  } >.</button></div>
+          <div id ="box"> <button name="0" onClick= { e => this.doCalculations(e.target.name )  } >0</button></div>
+          <div id ="box"> <button name="=" onClick= { e => this.doCalculations(e.target.name )  } >=</button></div>
+          <div id ="box"> <button name="/" onClick= { e => this.doCalculations(e.target.name )  } >/</button></div>
         </div>
       </div>
     </div>  
@@ -143,5 +147,8 @@ function getPrecision (num) {
   }
   return precision;  
 }
+
+
+
 
 export default App;
